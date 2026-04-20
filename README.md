@@ -63,6 +63,10 @@ MCP
 运行
 python client.py
 
+结果如图：
+<img width="1173" height="698" alt="屏幕截图 2026-04-20 190535" src="https://github.com/user-attachments/assets/e3a0a570-df53-49c0-ab6c-829a619e5fed" />
+
+
 📝 使用示例（在 Cursor 中）
 连接成功后，你可以用自然语言让 AI 调用工具，例如：
 「帮我读取桌面的 test.txt 文件内容」
