@@ -1,6 +1,8 @@
-自定义 MCP 服务 
+自定义 MCP 服务
+
 📌 项目简介
 这是一个基于 FastMCP 开发的自定义 MCP（Model Control Protocol）服务端，集成了文件操作、系统信息获取、网络请求三大类工具，可直接对接 Cursor/Claude 等支持 MCP 协议的 AI 客户端，让 AI 能调用你的本地工具完成复杂任务（如爬取网页、读写文件、获取系统信息等）。
+
 🚀 快速开始
 1. 环境准备
 Python 3.10+
@@ -19,18 +21,27 @@ client.py：本地测试客户端（可选）
 
 🛠️ 功能说明
 本服务端提供 6 个可被 AI 调用的工具：
+
 表格
+
 工具名称	功能描述	示例调用
+
 list_files	遍历指定文件夹，返回文件列表（默认读取桌面）	list_files("~/Desktop")
+
 read_text_file	读取文本文件内容（支持 .txt/.md/.py/.json 等）	read_text_file("D:/test.txt")
+
 write_text_file	覆盖写入文本文件	write_text_file("D:/output.txt", "Hello MCP!")
+
 get_system_info	获取系统信息（系统版本、主机名、Python 版本等）	get_system_info()
+
 fetch_webpage	爬取网页文本内容（限制返回长度，避免过长）	fetch_webpage("https://www.tmall.com")
+
 fetch_api	请求 API 接口，返回 JSON 数据	fetch_api("https://httpbin.org/get")
 
 🔌 对接 Cursor 配置
 打开 Cursor 设置（Ctrl + ,），搜索「MCP」进入 MCP 服务器设置
 点击「添加新服务器」，填入以下配置（修改为你的实际路径）：
+
 json
 {
   "mcpServers": {
@@ -40,13 +51,15 @@ json
     }
   }
 }
+
 保存配置并重启 Cursor，当服务端状态变为绿色圆点即表示连接成功
 
 🧪 本地测试
 可以使用 client.py 直接测试服务端功能，无需依赖 AI 客户端：
     
-运行命令：
-bash
+运行环境：
+MCP
+
 运行
 python client.py
 
