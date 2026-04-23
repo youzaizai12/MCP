@@ -1,9 +1,9 @@
 自定义 MCP 服务
 
-📌 项目简介
+项目简介
 这是一个基于 FastMCP 开发的自定义 MCP（Model Control Protocol）服务端，集成了文件操作、系统信息获取、网络请求三大类工具，可直接对接 Cursor/Claude 等支持 MCP 协议的 AI 客户端，让 AI 能调用你的本地工具完成复杂任务（如爬取网页、读写文件、获取系统信息等）。
 
-🚀 快速开始
+快速开始
 1. 环境准备
 Python 3.10+
 虚拟环境（推荐使用 Conda）
@@ -19,7 +19,7 @@ pip install fastmcp requests
 my_mcp.py：MCP 服务端主程序
 client.py：本地测试客户端（可选）
 
-🛠️ 功能说明
+功能说明
 本服务端提供 6 个可被 AI 调用的工具：
 
 表格
@@ -38,7 +38,7 @@ fetch_webpage	爬取网页文本内容（限制返回长度，避免过长）	fe
 
 fetch_api	请求 API 接口，返回 JSON 数据	fetch_api("https://httpbin.org/get")
 
-🔌 对接 Cursor 配置
+ 对接 Cursor 配置
 打开 Cursor 设置（Ctrl + ,），搜索「MCP」进入 MCP 服务器设置
 点击「添加新服务器」，填入以下配置（修改为你的实际路径）：
 
@@ -54,7 +54,7 @@ json
 
 保存配置并重启 Cursor，当服务端状态变为绿色圆点即表示连接成功
 
-🧪 本地测试
+🧪本地测试
 可以使用 client.py 直接测试服务端功能，无需依赖 AI 客户端：
     
 运行环境：
@@ -67,7 +67,7 @@ python client.py
 <img width="1173" height="698" alt="屏幕截图 2026-04-20 190535" src="https://github.com/user-attachments/assets/e3a0a570-df53-49c0-ab6c-829a619e5fed" />
 
 
-📝 使用示例（在 Cursor 中）
+ 使用示例（在 Cursor 中）
 连接成功后，你可以用自然语言让 AI 调用工具，例如：
 「帮我读取桌面的 test.txt 文件内容」
 「帮我遍历我的下载文件夹，列出所有文件」
@@ -75,7 +75,7 @@ python client.py
 「帮我获取当前电脑的系统信息」
 「帮我新建一个文件，内容是：这是MCP服务生成的测试文件」
 
-❌ 常见问题与解决方案
+ 常见问题与解决方案
 1. ModuleNotFoundError: No module named 'requests'
 原因：虚拟环境中未安装 requests 库
 解决：在激活虚拟环境后执行 pip install requests
@@ -100,7 +100,7 @@ def your_tool_name(param1: str, param2: int) -> str:
     return "工具返回结果"
 📄 License
 MIT License，可自由修改和扩展使用。
-如果你需要，我可以帮你把这份 README 改成更简洁的 Markdown 版本，或者补充更多使用场景的示例。
+
 
 
 
