@@ -54,7 +54,8 @@ json
 
 保存配置并重启 Cursor，当服务端状态变为绿色圆点即表示连接成功
 
-🧪本地测试
+本地测试
+
 可以使用 client.py 直接测试服务端功能，无需依赖 AI 客户端：
     
 运行环境：
@@ -80,15 +81,18 @@ python client.py
 原因：虚拟环境中未安装 requests 库
 解决：在激活虚拟环境后执行 pip install requests
 
-3. 服务端显示红色圆点（连接失败）
+2. 服务端显示红色圆点（连接失败）
+   
 原因 1：python.exe 路径错误，Cursor 未使用你的虚拟环境 Python
 解决：用 where python 获取虚拟环境的 Python 绝对路径，替换配置中的 command
+
 原因 2：my_mcp.py 路径错误或包含中文导致解析失败
 解决：使用文件的绝对路径，确保路径中无特殊字符
 
-5. Cursor 无法识别新增的工具
+3. Cursor 无法识别新增的工具
 原因：Cursor 缓存了旧的服务端信息
 解决：修改代码后重启 Cursor，并在 MCP 设置中重新保存配置
+
 📈 扩展开发
 你可以通过添加 @mcp.tool() 装饰器，快速扩展自定义工具，格式如下：
 python
